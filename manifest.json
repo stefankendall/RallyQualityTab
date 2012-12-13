@@ -23,7 +23,7 @@
         "js/lib/underscore-min.js",
         "js/lib/date.js",
         "js/util/polling.js",
-        "js/navigation/trim_navigation_menu.js"
+        "js/navigation/remove_quality_tab.js"
     ],
     "browser_action":{
         "default_icon":"images/icon128.png"

@@ -40,7 +40,7 @@
                 chrome.extension.getURL("js/lib/underscore-min.js"),
                 chrome.extension.getURL("js/lib/date.js"),
                 chrome.extension.getURL("js/util/polling.js"),
-                chrome.extension.getURL("js/navigation/trim_navigation_menu.js")
+                chrome.extension.getURL("js/navigation/remove_quality_tab.js")
             ]);
         }
     });
