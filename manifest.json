@@ -1,8 +1,8 @@
 {
-    "name":"Better Rally",
+    "name":"Rally Tabs",
     "version":"1",
     "manifest_version":2,
-    "description":"A better way to use Rally.",
+    "description":"Customize your Rally tabs",
     "background":{
         "scripts":["js/background.js"]
     },
@@ -42,7 +42,7 @@
         "js/navigation/trim_navigation_menu.js"
     ],
     "browser_action":{
-        "default_icon":"images/icon19.png"
+        "default_icon":"images/icon128.png"
     },
     "icons":{
         "16":"images/icon16.png",
