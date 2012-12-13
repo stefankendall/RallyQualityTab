@@ -1,7 +1,7 @@
 {
     "name":"Rally Tabs",
-    "version":"1",
-    "manifest_version":3,
+    "version":"2",
+    "manifest_version":2,
     "description":"Customize your Rally tabs",
     "permissions":[
         "tabs"
