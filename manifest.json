@@ -1,8 +1,8 @@
 {
-    "name":"Better Rally",
+    "name":"Rally Tabs",
     "version":"1",
     "manifest_version":2,
-    "description":"A better way to use Rally.",
+    "description":"Customize your Rally tabs",
     "background":{
         "scripts":["js/background.js"]
     },
