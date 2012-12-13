@@ -2,7 +2,7 @@
 
     chrome.extension.onMessage.addListener(
         function (request, sender, sendResponse) {
-            if (request.refresh) {
+            if (request && request.refresh) {
                 location.reload();
             }
         }

@@ -22,7 +22,5 @@
 //
 //        trimNavigationMenu();
 //    });
-
-    console.log('hi');
 })();
 
