@@ -8,17 +8,6 @@
         }
     );
 
-    var RALLY_UTIL_OPTIONS = ["rally_utils.interesting_builds"];
-    var _optionIndex;
-    for (_optionIndex = 0; _optionIndex < RALLY_UTIL_OPTIONS.length; ++_optionIndex) {
-        var optionKey = RALLY_UTIL_OPTIONS[_optionIndex];
-        chrome.extension.sendMessage({method:"getLocalStorage", key:optionKey}, function (response) {
-            if (response) {
-                localStorage[optionKey] = JSON.stringify(response.data);
-            }
-        });
-    }
-
     chrome.extension.sendMessage({is_toggled_on:true}, function (response) {
         if (response && response.is_toggled_on) {
             function injectJs(links) {
@@ -37,9 +26,6 @@
 
             injectJs([
                 chrome.extension.getURL("js/lib/jquery-1.8.2.min.js"),
-                chrome.extension.getURL("js/lib/underscore-min.js"),
-                chrome.extension.getURL("js/lib/date.js"),
-                chrome.extension.getURL("js/util/polling.js"),
                 chrome.extension.getURL("js/navigation/remove_quality_tab.js")
             ]);
         }
