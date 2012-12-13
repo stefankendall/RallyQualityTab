@@ -6,3 +6,8 @@ before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "sudo aptitude -y -q install unzip chromium-browser"
+
+notifications:
+  email:
+    - skendall@rallydev.com
+    - elifka@rallydev.com
