@@ -4,7 +4,7 @@
     "manifest_version":2,
     "description":"A better way to use Rally.",
     "background":{
-        "scripts":[]
+        "scripts":["js/background.js"]
     },
     "options_page": "html/options.html",
     "permissions":[
