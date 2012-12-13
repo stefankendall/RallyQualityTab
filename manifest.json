@@ -3,9 +3,6 @@
     "version":"1",
     "manifest_version":2,
     "description":"Customize your Rally tabs",
-    "background":{
-        "scripts":["js/background.js"]
-    },
     "options_page": "html/options.html",
     "permissions":[
         "tabs"
