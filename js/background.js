@@ -14,10 +14,8 @@
             var toggle_on_off = function () {
                 if (is_toggled_on) {
                     is_toggled_on = false;
-                    chrome.browserAction.setIcon({path:"images/icon19_off.png"});
                 } else {
                     is_toggled_on = true;
-                    chrome.browserAction.setIcon({path:"images/icon19.png"});
                 }
                 refresh_tab();
             }

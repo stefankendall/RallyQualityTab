@@ -42,7 +42,7 @@
         "js/navigation/trim_navigation_menu.js"
     ],
     "browser_action":{
-        "default_icon":"images/icon19.png"
+        "default_icon":"images/icon128.png"
     },
     "icons":{
         "16":"images/icon16.png",
