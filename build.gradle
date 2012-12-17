@@ -1,12 +1,6 @@
 import groovy.json.JsonSlurper
 
-//repositories {
-//    mavenCentral()
-//}
-//
-//dependencies {
-//    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
-//}
+defaultTasks 'build'
 
 task clean << {
     new File('build').deleteDir()
@@ -53,4 +47,10 @@ task zipBuildFiles(type: Zip, dependsOn: [copyResourcesToBuild]) {
 }
 
 task build(dependsOn: [clean, zipBuildFiles])
-defaultTasks 'build'
+
+task version << {
+    String oldVersion = findVersion()
+    int newVersion = Integer.parseInt(oldVersion) + 1
+    File manifestFile = new File('manifest.json')
+    manifestFile.write(manifestFile.text.replaceAll('"version": "' + oldVersion + '"', '"version": "' + newVersion + '"'))
+}

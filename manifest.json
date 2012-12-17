@@ -1,29 +1,29 @@
 {
-    "name":"Rally Tabs",
-    "version":"2",
-    "manifest_version":2,
-    "description":"Customize your Rally tabs",
-    "permissions":[
+    "name": "Rally Tabs",
+    "version": "3",
+    "manifest_version": 2,
+    "description": "Customize your Rally tabs",
+    "permissions": [
         "tabs"
     ],
-    "content_scripts":[
+    "content_scripts": [
         {
-            "matches":["https://rally1.rallydev.com/*", "https://us1.rallydev.com/*"],
-            "js":[
+            "matches": ["https://rally1.rallydev.com/*", "https://us1.rallydev.com/*"],
+            "js": [
                 "js/better_rally.js"
             ]
         }
     ],
-    "web_accessible_resources":[
+    "web_accessible_resources": [
         "js/lib/jquery-1.8.2.min.js",
         "js/navigation/remove_quality_tab.js"
     ],
-    "browser_action":{
-        "default_icon":"images/icon128.png"
+    "browser_action": {
+        "default_icon": "images/icon128.png"
     },
-    "icons":{
-        "16":"images/icon16.png",
-        "48":"images/icon48.png",
-        "128":"images/icon128.png"
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
     }
 }
