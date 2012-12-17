@@ -1,0 +1,56 @@
+import groovy.json.JsonSlurper
+
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+//}
+
+task clean << {
+    new File('build').deleteDir()
+}
+
+task copyResourcesToBuild << {
+    new File('build').mkdir()
+    copy {
+        from '.'
+        into 'build'
+        include 'manifest.json'
+        include 'license.txt'
+    }
+
+    copy {
+        from 'js'
+        into 'build/js'
+    }
+
+    copy {
+        from 'html'
+        into 'build/html'
+    }
+
+    copy {
+        from 'images'
+        into 'build/images'
+        include 'icon16.png'
+        include 'icon48.png'
+        include 'icon96.png'
+        include 'icon128.png'
+    }
+}
+
+String findVersion() {
+    return new JsonSlurper().parseText(new File('manifest.json').text).version
+}
+
+task zipBuildFiles(type: Zip, dependsOn: [copyResourcesToBuild]) {
+    from 'build'
+    baseName 'rally-tabs'
+    version findVersion()
+    destinationDir new File('.')
+}
+
+task build(dependsOn: [clean, zipBuildFiles])
+defaultTasks 'build'
