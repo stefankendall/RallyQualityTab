@@ -52,5 +52,5 @@ task version << {
     String oldVersion = findVersion()
     int newVersion = Integer.parseInt(oldVersion) + 1
     File manifestFile = new File('manifest.json')
-    manifestFile.write(manifestFile.text.replaceAll('"version": "' + oldVersion + '"', '"version": "' + newVersion + '"'))
+    manifestFile.write(manifestFile.text.replaceAll('"version":\\s*"' + oldVersion + '"', '"version": "' + newVersion + '"'))
 }

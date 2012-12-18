@@ -1,6 +1,6 @@
 {
     "name":"Rally Tabs",
-    "version":"4",
+    "version": "5",
     "manifest_version":3,
     "description":"Customize your Rally tabs",
     "background":{
