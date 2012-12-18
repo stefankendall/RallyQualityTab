@@ -1,6 +1,14 @@
 (function () {
     var tabs = ["My Home", "Plan", "Track", "Quality", "Reports", "Search"];
     var key = "rally_utils.tabToggles";
+    var defaultToggles = {
+        "My Home":true,
+        "Plan":true,
+        "Track":true,
+        "Quality":false,
+        "Reports":true,
+        "Search":true
+    };
 
     function saveToggles(toggles) {
         localStorage[key] = JSON.stringify(toggles);
@@ -8,12 +16,7 @@
 
     function loadToggles() {
         if (!(key in localStorage)) {
-            var toggles = {};
-            tabs.forEach(function (tab) {
-                toggles[tab] = true;
-            });
-            toggles["Quality"] = false;
-            saveToggles(toggles);
+            saveToggles(defaultToggles);
         }
 
         return JSON.parse(localStorage[key]);
