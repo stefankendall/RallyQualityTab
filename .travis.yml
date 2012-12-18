@@ -9,5 +9,5 @@ before_install:
 
 notifications:
   email:
-    - skendall@rallydev.com
-    - elifka@rallydev.com
+    - stefankendall@gmail.com
+    - eric.lifka@gmail.com
