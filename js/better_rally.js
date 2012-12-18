@@ -3,18 +3,20 @@
         var script = document.createElement("script");
         script.type = "text/javascript";
         script.src = links[0];
-        var callback = function () {
+        script.addEventListener('load', function () {
             if (links.length > 1) {
-                injectJs(links.slice(1));
+                injectJs(links.splice(1));
             }
-        };
-        script.addEventListener('load', callback, false);
+        }, false);
 
         (document.head || document.body || document.documentElement).appendChild(script);
     }
 
-    injectJs([
-        chrome.extension.getURL("js/lib/jquery-1.8.2.min.js"),
-        chrome.extension.getURL("js/navigation/remove_quality_tab.js")
-    ]);
-})();
+    chrome.extension.sendMessage({method:"getLocalStorage", key:"rally_utils.tabToggles"}, function (response) {
+        localStorage["rally_utils.tabToggles"] = JSON.stringify(response.data);
+        injectJs([
+            chrome.extension.getURL("js/lib/jquery-1.8.2.min.js"),
+            chrome.extension.getURL("js/remove_tabs.js")
+        ]);
+    });
+}());
